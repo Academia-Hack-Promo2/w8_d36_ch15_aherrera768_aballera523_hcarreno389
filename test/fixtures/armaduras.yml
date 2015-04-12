@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo: MyString
+  nombre: MyString
+  personaje: MyString
+  defensa: 1
+  daño: 1
+
+two:
+  tipo: MyString
+  nombre: MyString
+  personaje: MyString
+  defensa: 1
+  daño: 1

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo: MyString
+  nombre: MyString
+  daño: 1
+  defensa: 1
+
+two:
+  tipo: MyString
+  nombre: MyString
+  daño: 1
+  defensa: 1
