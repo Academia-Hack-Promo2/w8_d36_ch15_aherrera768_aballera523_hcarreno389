@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PersonajeTest < ActiveSupport::TestCase
+class AttackTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

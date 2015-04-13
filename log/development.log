@@ -1,0 +1,122 @@
+  [1m[36m (130.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (311.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (11.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateWeapons (20150413002117)
+  [1m[35m (114.7ms)[0m  CREATE TABLE `weapons` (`id` int(11) auto_increment PRIMARY KEY, `type` varchar(255), `name` varchar(255), `damage` int(11), `defense` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150413002117')
+  [1m[36m (57.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateArmors (20150413002503)
+  [1m[35m (120.8ms)[0m  CREATE TABLE `armors` (`id` int(11) auto_increment PRIMARY KEY, `type` varchar(255), `name` varchar(255), `character` varchar(255), `defense` int(11), `damage` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (16.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150413002503')
+  [1m[36m (60.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAttacks (20150413002629)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+Migrating to CreateArmors (20150413002503)
+  [1m[36m (63.8ms)[0m  [1mDROP TABLE `armors`[0m
+  [1m[35mSQL (51.2ms)[0m  DELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20150413002503'
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'games_of_clases'
+  AND fk.table_name = 'weapons'
+
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `weapons`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateArmors (20150413002503)
+  [1m[35m (135.1ms)[0m  CREATE TABLE `armors` (`id` int(11) auto_increment PRIMARY KEY, `type` varchar(255), `name` varchar(255), `character` varchar(255), `defense` int(11), `damage` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150413002503')
+  [1m[36m (50.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAttacks (20150413002629)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+Migrating to CreateArmors (20150413002503)
+  [1m[36m (41.1ms)[0m  [1mDROP TABLE `armors`[0m
+  [1m[35mSQL (52.0ms)[0m  DELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20150413002503'
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'games_of_clases'
+  AND fk.table_name = 'weapons'
+
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `weapons`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateArmors (20150413002503)
+  [1m[35m (217.0ms)[0m  CREATE TABLE `armors` (`id` int(11) auto_increment PRIMARY KEY, `type` varchar(255), `name` varchar(255), `character` varchar(255), `defense` int(11), `damage` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150413002503')
+  [1m[36m (49.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAttacks (20150413002629)
+  [1m[35m (109.3ms)[0m  CREATE TABLE `attacks` (`id` int(11) auto_increment PRIMARY KEY, `type` varchar(255), `name` varchar(255), `damage` int(11), `weapon_id` int(11), `character` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_attacks_on_weapon_id`  (`weapon_id`) ) ENGINE=InnoDB
+  [1m[36m (271.4ms)[0m  [1mALTER TABLE `attacks` ADD CONSTRAINT `fk_rails_c2a8875437`
+FOREIGN KEY (`weapon_id`)
+  REFERENCES `weapons` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150413002629')[0m
+  [1m[35m (53.7ms)[0m  COMMIT
+Migrating to CreateCharacters (20150413003322)
+  [1m[36m (95.8ms)[0m  [1mCREATE TABLE `characters` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `type` varchar(255), `age` int(11), `vitality` int(11), `life_points` int(11), `weapon_id` int(11), `armor_id` int(11), `skill` varchar(255), `level` int(11), `defense_points` int(11), `attack_points` int(11), `attacks` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_characters_on_weapon_id`  (`weapon_id`) ,  INDEX `index_characters_on_armor_id`  (`armor_id`) ) ENGINE=InnoDB[0m
+  [1m[35m (291.0ms)[0m  ALTER TABLE `characters` ADD CONSTRAINT `fk_rails_b912e06872`
+FOREIGN KEY (`weapon_id`)
+  REFERENCES `weapons` (`id`)
+
+  [1m[36m (301.4ms)[0m  [1mALTER TABLE `characters` ADD CONSTRAINT `fk_rails_969880a114`
+FOREIGN KEY (`armor_id`)
+  REFERENCES `armors` (`id`)
+[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150413003322')[0m
+  [1m[35m (52.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.6ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'games_of_clases'
+  AND fk.table_name = 'armors'
+
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `armors`[0m
+  [1m[35m (0.5ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'games_of_clases'
+  AND fk.table_name = 'attacks'
+
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `attacks`[0m
+  [1m[35m (0.6ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'games_of_clases'
+  AND fk.table_name = 'characters'
+
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `characters`[0m
+  [1m[35m (0.6ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'games_of_clases'
+  AND fk.table_name = 'weapons'
+
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `weapons`[0m

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ArmaTest < ActiveSupport::TestCase
+class ArmorTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
